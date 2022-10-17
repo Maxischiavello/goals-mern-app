@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <Header className='header'>
+        <header className='header'>
             <div className='logo'>
                 <Link to='/'>GoalSetter</Link>
             </div>
@@ -19,7 +19,7 @@ function Header() {
                     </Link>
                 </li>
             </ul>
-        </Header>
+        </header>
     )
 }
 
