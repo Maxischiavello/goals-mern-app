@@ -10,7 +10,7 @@ const createGoal = async (goalData, token) => {
         }
     }
 
-    const response = await axios.post(API_URL, goalData, config)
+    const response = await axios.post(API_URL, goalData, config) // si no mandamos el config con los headers, no vamos a poder acceder a esa ruta
 
     return response.data
 }
@@ -28,8 +28,21 @@ const getGoals = async (token) => {
     return response.data
 }
 
+// delete user goal
+const deleteGoal = async (goalId, token) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    }
+
+    const response = await axios.delete(API_URL + goalId, config)
+
+    return response.data
+}
+
 const goalService = {
-    createGoal, getGoals
+    createGoal, getGoals, deleteGoal
 }
 
 export default goalService
